@@ -29,3 +29,9 @@ describe("Es Bisiesto", () => {
       expect(esBisiesto(2012)).toEqual(true);
     });
   });
+
+  describe("Es Bisiesto", () => {
+    it("No divisible entre 4 NO deberia considerarse como ano bisiesto", () => {
+      expect(esBisiesto(2018)).toEqual(false);
+    });
+  });

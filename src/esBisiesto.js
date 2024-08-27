@@ -15,6 +15,10 @@ function esBisiesto(anio){
         {
             return true;
         }
+    if(anio%4 != 0)
+        {
+            return false;
+        }
     return false;
 }
 
