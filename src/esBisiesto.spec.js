@@ -17,3 +17,9 @@ describe("Es Bisiesto", () => {
       expect(esBisiesto(400)).toEqual(true);
     });
   });
+
+  describe("Es Bisiesto", () => {
+    it("Divisible entre 100 y no 400 NO deberia considerarse como ano bisiesto", () => {
+      expect(esBisiesto(1700)).toEqual(false);
+    });
+  });
