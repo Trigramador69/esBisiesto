@@ -1,15 +1,26 @@
 <html>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
+    <h1>Comprobador de Año Bisiesto</h1>
+    <form id="bisiesto-form">
+      <label for="anio">Introduzca un año:</label>
+      <input type="number" id="anio" />
+      <input type="submit" value="Verificar" id="verificar-button" />
     </form>
     <div id="resultado-div"></div>
 
-    <script type="module" src="./src/presenter.js"></script>
+    <script type="module">
+      import esBisiesto from "./src/esBisiesto.js";
+
+      document.getElementById("bisiesto-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const anio = document.getElementById("anio").value;
+        const resultado = esBisiesto(parseInt(anio, 10));
+
+        document.getElementById("resultado-div").textContent = resultado
+          ? `El año ${anio} es bisiesto.`
+          : `El año ${anio} no es bisiesto.`;
+      });
+    </script>
   </body>
 </html>
