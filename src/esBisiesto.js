@@ -3,6 +3,10 @@ function esBisiesto(anio){
     {
     return true;
     }
+    if(anio%400 === 0)
+    {
+        return true
+    }
     return false;
 }
 
